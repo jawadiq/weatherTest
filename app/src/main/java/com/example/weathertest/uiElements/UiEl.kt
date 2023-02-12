@@ -13,14 +13,19 @@ import com.example.weathertest.R
 class UiEl {
 
     @Composable
-    fun googl() {
+    fun TeamMemerAvatar() {
         Surface(shape = CircleShape, modifier = Modifier.padding(5.dp), elevation = 5.dp) {
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.jawad),
                 contentDescription = ""
             )
 
         }
+    }
+
+    @Composable
+    fun myFun (content : @Composable ()-> Unit){
+
     }
 
 }
