@@ -15,8 +15,9 @@ NavHost(navController = navController, startDestination = Screenenums.MyScreens.
 MainScreenContent(navController = navController)
     }
     composable(Screenenums.MyScreens.DetailsScreen.name){
-        DetailProfileScreen()
+        DetailProfileScreen(navController = navController)
     }
+
 }
 
 

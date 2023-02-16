@@ -1,6 +1,8 @@
 package com.example.weathertest.screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,10 +25,10 @@ fun MainScreenContent(navController: NavController){
     )
     Surface(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .padding(1.dp)
         ,
-        color = Color(0xFF89C9F8)
+        color = Color(0xFFF8F9FA)
 
 
     ) {
@@ -35,20 +37,21 @@ fun MainScreenContent(navController: NavController){
                 .fillMaxWidth()
                 .fillMaxHeight()
         ) {
-            Row(modifier = Modifier
+            LazyRow(modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentHeight()
                 ) {
 
-                ManagerVieww()
+                items(10) { index ->
+                    ManagerVieww()
+
+                }
+            }
+            LazyColumn {
+                items (10){       index->          ConsultantCard(navController)
+                }
 
             }
-            ConsultantCard(navController)
-            ConsultantCard(navController)
-            ConsultantCard(navController)
-            ConsultantCard(navController)
-            ConsultantCard(navController)
-            ConsultantCard(navController)
         }
     }
 }

@@ -10,7 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.weathertest.R
 
-class UiEl {
+
 
     @Composable
     fun TeamMemerAvatar() {
@@ -23,9 +23,3 @@ class UiEl {
         }
     }
 
-    @Composable
-    fun myFun (content : @Composable ()-> Unit){
-
-    }
-
-}

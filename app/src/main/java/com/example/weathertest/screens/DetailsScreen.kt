@@ -15,15 +15,19 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithCache
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-    fun DetailProfileScreen() {
+    fun DetailProfileScreen(navController: NavController) {
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -118,7 +122,7 @@ import androidx.compose.ui.unit.dp
 
                         // Iconos
                         Row(modifier = Modifier.align(Alignment.CenterEnd)) {
-                            IconButton(onClick = { /*TODO*/ }) {
+                            IconButton(onClick = { navController.popBackStack()}) {
                                 Icon(Icons.Default.AccountBox, contentDescription = null)
 
                             }
@@ -131,13 +135,15 @@ import androidx.compose.ui.unit.dp
                 }
             }
         }
-    }
-@Preview
-@Composable
-fun MyPreview(){
-   DetailProfileScreen()
 
-}
+
+    }
+//@Preview
+//@Composable
+//fun MyPreview(){
+//   DetailProfileScreen()
+//
+//}
 
 
 
